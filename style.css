@@ -30,7 +30,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;    
-    background-color: rgb(23, 44, 13); 
     height: 100vh;  
     color: white;
 }
@@ -39,10 +38,24 @@ body{
 .main{
    height: 544px;
     width: 459px;
-   background-color: black;
-   padding: 32px;
-   border-radius: 16px;
+background: 
+    radial-gradient(
+        ellipse 100% 50% at 30% 0%,
+        rgba(32, 140, 143, 1) 0%,
+        rgba(32, 140, 143, 0.3) 40%,
+        transparent 70%
+    ),
+    radial-gradient(
+        ellipse 100% 120% at -0% 20%,
+        rgba(74, 63, 139, 1) 0%,
+        rgba(74, 63, 139, 0.3) 40%,
+        transparent 70%
+    ),
+    black;
+    padding: 32px;
+    border-radius: 16px;
 }
+
 
 .navbar{
     display: flex;
