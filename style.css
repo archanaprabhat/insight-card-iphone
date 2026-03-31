@@ -16,6 +16,12 @@
   font-weight: 600;
 }
 
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('./assets/fonts/SF-Pro-Display-Black.otf') format('opentype');
+    font-weight: 900;
+}
+
 body {
   font-family: 'SF Pro Rounded', sans-serif;
 }
@@ -88,9 +94,10 @@ background:
 .btn{
 width: 127px;
 height: 36px;
+font-size: 17px;
 border-radius:20px ;
 border: 1px solid white;
-background-color: black;
+background: transparent;
 display: flex;
 color: white;
 justify-content: center;
@@ -99,7 +106,7 @@ gap: 10px;
 }
 
 .chev-down{
-    height: 9.5px;
+    height: 13.5px;
     width: 13.5px;
 }
 
@@ -122,7 +129,9 @@ gap: 10px;
 
 .number{
     font-size: 90px;
-    font-weight: 900px;
+     font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-style: normal;
     line-height: 0.8;
 }
 
