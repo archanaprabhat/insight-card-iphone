@@ -1,0 +1,6 @@
+echo "assets/SF-Pro.img" >> .gitignore
+echo "assets/SF-Pro.dmg" >> .gitignore
+echo "assets/unpacked/" >> .gitignore
+echo "assets/sf-pro-extracted/" >> .gitignore
+git add .gitignore
+git commit -m "Add gitignore for large font files"
