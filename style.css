@@ -60,6 +60,9 @@ background:
     black;
     padding: 32px;
     border-radius: 16px;
+    transition: transform 0.5s, box-shadow 0.5s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 
@@ -302,6 +305,45 @@ footer{
     }
 }
 
+.main:hover{
+    transform: scale(1.02);
+    box-shadow:
+  0 0 20px rgba(34, 156, 160, 0.5),
+  0 0 30px rgba(30, 129, 132, 0.2),
+  0 0 15px rgba(72, 60, 142, 0.5),
+  0 0 30px rgba(74, 62, 142, 0.2);
+}
+
+.main::before{
+  content: '';
+  position: absolute;
+  top: -140%;
+  left: -140%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+  0deg,
+  transparent 0%,
+  transparent 40%,
+
+  rgba(255, 255, 255, 0.15) 45%, 
+  rgba(120, 200, 255, 0.25) 48%,
+  rgba(180, 140, 255, 0.25) 50%,   
+  rgba(120, 255, 220, 0.25) 52%,  
+  rgba(255, 255, 255, 0.15) 55%, 
+
+  transparent 60%,
+  transparent 100%
+);
+opacity: 0;
+transform: rotate(-45deg);
+transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.main:hover::before{
+    opacity: 1;
+  transform: rotate(-45deg) translateY(100%);
+}
 
 
 
