@@ -130,7 +130,7 @@ gap: 10px;
     align-items: center;
     gap: 17px;
     padding-bottom: 57px;
-}
+    }
 
 .number{
     font-size: 90px;
@@ -138,6 +138,7 @@ gap: 10px;
     font-weight: 600;
     font-style: normal;
     line-height: 0.8;
+    animation: numberAnimation 1.09s ease-in-out both;
 }
 
 .arrow{
@@ -200,6 +201,25 @@ footer{
     align-items: center;
     justify-content: center;
     gap:6px;
+}
+
+
+.line{
+    animation: textFade 0.35s ease-out both;
+    display: inline-block;
+    --blur-start:6px
+}
+
+#line-1{
+    animation-delay: 0.5s;
+}
+#line-2{
+    animation-delay: 0.675s;
+    --blur-start:4px;
+    animation-duration: 0.35s;
+}
+#line-3{
+    animation-delay: 0.750s;
 }
 
 
@@ -358,6 +378,50 @@ transition: opacity 1s ease, transform 0.7s ease;
     }
 }
 
+@keyframes textFade{
+    from{
+        opacity: 0;
+        transform: translateY(12px);
+        filter: blur(var(--blur-start));
+        
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+        
+    }
+}
+
+@keyframes numberAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+
+  30% {
+    opacity: 0.2;
+  }
+
+  55% {
+    transform: translateY(-7px) scale(1.09);
+    opacity: 0.5;
+  }
+
+  65% {
+    transform: translateY(-7px) scale(1.09);
+    opacity: 0.8;
+  }
+
+  80% {
+    transform: translateY(2px) scale(0.98);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
 
 
 
