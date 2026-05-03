@@ -147,10 +147,12 @@ gap: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
 }
 
 .animate-arrow{
-    animation: arrowAnimation 0.8s;
+    opacity: 1;
+    animation: arrowAnimation 0.8s ease-out;
 }
 
 .main-text{
@@ -435,12 +437,10 @@ transition: opacity 1s ease, transform 0.7s ease;
 
   50% {
     transform: translateY(-6px) scale(1.09);
-    opacity: 0.8;
   }
 
   70% {
     transform: translateY(2px) scale(0.98);
-    opacity: 1;
   }
 
   100% {

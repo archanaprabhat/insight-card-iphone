@@ -1,23 +1,33 @@
-const el = document.getElementById("count");
+window.addEventListener("load", () => {
+  const el = document.getElementById("count");
 
-const target = 92;
-const duration = 900;
+  const target = 92;
+  const duration = 2100;
 
-let startTime = null;
+  let startTime = null;
+  el.textContent = 0;
 
-function animate(time) {
-  if (!startTime) startTime = time;
-  const elapsed = time - startTime;
-  const progress = Math.min(elapsed / duration, 1);
-  const easeOut = 1 - Math.pow(1 - progress, 3);
-  const current = Math.floor(easeOut * target);
-  el.textContent = current;
-  if (progress < 1) {
-    requestAnimationFrame(animate);
-  } else {
-    el.textContent = target;
-    document.querySelector(".arrow").classList.add("animate-arrow");
+  function animate(time) {
+    if (!startTime) startTime = time;
+    const elapsed = time - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const easeOut = 1 - Math.pow(1 - progress, 3);
+    const current = Math.floor(easeOut * target);
+    console.log("elapsed:", elapsed,
+         "startTime:", startTime ,
+          "progress:", progress,
+          "easeOut:", easeOut, 
+          "current:", current);
+    el.textContent = current;
+    if (progress < 1) {
+      requestAnimationFrame(animate);
+    } else {
+      el.textContent = target;
+      document.querySelector(".arrow").classList.add("animate-arrow");
+    }
   }
-}
 
-requestAnimationFrame(animate);
+  setTimeout(() => {
+    requestAnimationFrame(animate);
+}, 50);
+});
