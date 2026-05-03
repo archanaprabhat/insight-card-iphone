@@ -147,6 +147,9 @@ gap: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.animate-arrow{
     animation: arrowAnimation 0.8s;
 }
 
